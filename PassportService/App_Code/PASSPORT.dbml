@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Passport" Class="PASSPORTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=CHRISTOPHER-PC;Initial Catalog=Passport;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PassportConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Passport" Member="Passports">
+    <Type Name="Passport">
+      <Column Name="PassportNum" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CountryOfBirth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CellNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmailAddr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StreetNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StreetName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Parish" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MotherMaiden" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateIssued" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateExpired" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.PassportQuery" Method="PassportQuery">
+    <Parameter Name="query" Type="System.String" DbType="VarChar(300)" />
+    <ElementType Name="PassportQueryResult">
+      <Column Name="PassportNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CountryOfBirth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CellNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmailAddr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StreetNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StreetName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Parish" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MotherMaiden" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateIssued" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateExpired" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectAllPassportById" Method="SelectAllPassportById">
+    <Parameter Name="PassportNum" Parameter="passportNum" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SelectAllPassportByIdResult">
+      <Column Name="PassportNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CountryOfBirth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CellNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmailAddr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StreetNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StreetName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Parish" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MotherMaiden" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateIssued" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateExpired" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SearchPassport" Method="SearchPassport">
+    <Parameter Name="Fname" Parameter="fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MiddleName" Parameter="middleName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Lname" Parameter="lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DOB" Parameter="dOB" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Nationality" Parameter="nationality" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CountryOfBirth" Parameter="countryOfBirth" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CellNum" Parameter="cellNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="EmailAddr" Parameter="emailAddr" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="StreetNum" Parameter="streetNum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StreetName" Parameter="streetName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Parish" Parameter="parish" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MotherMaiden" Parameter="motherMaiden" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DateIssued" Parameter="dateIssued" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DateExpired" Parameter="dateExpired" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="SearchPassportResult">
+      <Column Name="PassportNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CountryOfBirth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CellNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmailAddr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StreetNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StreetName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Parish" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MotherMaiden" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateIssued" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateExpired" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectAllPassport" Method="SelectAllPassport">
+    <ElementType Name="SelectAllPassportResult">
+      <Column Name="PassportNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CountryOfBirth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CellNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmailAddr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StreetNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StreetName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Parish" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MotherMaiden" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateIssued" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateExpired" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

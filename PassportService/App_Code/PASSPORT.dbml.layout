@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PASSPORT">
+  <DataContextMoniker Name="/PASSPORTDataContext" />
+  <nestedChildShapes>
+    <classShape Id="87239000-cef1-4ccf-b644-51525cf2dd31" absoluteBounds="3.625, 2, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/PASSPORTDataContext/Passport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f115761e-7aa8-460b-a5ad-53d6ec6d1d42" absoluteBounds="3.64, 2.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
