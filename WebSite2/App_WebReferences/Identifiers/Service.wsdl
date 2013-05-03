@@ -15,100 +15,15 @@
           <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DOB" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
           <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Addr" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="MotherMaiden" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CellNum" nillable="true" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="DataPulls" type="tns:ArrayOfDataPull" />
-          <s:element minOccurs="0" maxOccurs="1" name="Trns" type="tns:ArrayOfTrn" />
-          <s:element minOccurs="0" maxOccurs="1" name="NatIDs" type="tns:ArrayOfNatID" />
-          <s:element minOccurs="0" maxOccurs="1" name="Passports" type="tns:ArrayOfPassport" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfDataPull">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="DataPull" nillable="true" type="tns:DataPull" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="DataPull">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="DataID" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="CustID" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="NatIDNum" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="PassportNum" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="TrnNum" nillable="true" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="TimePull" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="TimeUpdate" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Person" type="tns:Person" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfTrn">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Trn" nillable="true" type="tns:Trn" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Trn">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="TrnNum" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="CustID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DOB" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="MotherMaiden" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Person" type="tns:Person" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfNatID">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="NatID" nillable="true" type="tns:NatID" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="NatID">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="NatIDNum" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="CustID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DOB" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="MotherMaiden" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Person" type="tns:Person" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="ArrayOfPassport">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Passport" nillable="true" type="tns:Passport" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="Passport">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="PassportNum" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="CustID" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DOB" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Nationality" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CountryOfBirth" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CellNum" nillable="true" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="EmailAddr" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="StreetNum" nillable="true" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Parish" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="MotherMaiden" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DateIssued" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="DateExpired" nillable="true" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Person" type="tns:Person" />
+          <s:element minOccurs="1" maxOccurs="1" name="CellNum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TRN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Passport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NAtionID" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="insertPersonResponse">
@@ -152,13 +67,30 @@
       <s:element name="selectAllPersonResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectAllPersonResult" type="tns:ArrayOfPerson" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectAllPersonResult" type="tns:ArrayOfSelectAllPersonResult" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfPerson">
+      <s:complexType name="ArrayOfSelectAllPersonResult">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SelectAllPersonResult" nillable="true" type="tns:SelectAllPersonResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SelectAllPersonResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherMaiden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CellNum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TRN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Passport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NAtionID" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="selectPersonById">
@@ -171,10 +103,27 @@
       <s:element name="selectPersonByIdResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectPersonByIdResult" type="tns:Person" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectPersonByIdResult" type="tns:SelectAllPersonByIdResult" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="SelectAllPersonByIdResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherMaiden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CellNum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TRN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Passport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NAtionID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="PersonQuery">
         <s:complexType>
           <s:sequence>
@@ -185,329 +134,37 @@
       <s:element name="PersonQueryResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="PersonQueryResult" type="tns:ArrayOfPerson" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonQueryResult" type="tns:ArrayOfPersonQueryResult" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="insertPassport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Passport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="insertPassportResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="insertPassportResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updatePassport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Passport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updatePassportResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="updatePassportResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deletePassport">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Passport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deletePassportResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="deletePassportResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectAllPassport">
+      <s:complexType name="ArrayOfPersonQueryResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonQueryResult" nillable="true" type="tns:PersonQueryResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PersonQueryResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherMaiden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CellNum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TRN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Passport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NAtionID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateIdentfiersDb">
         <s:complexType />
       </s:element>
-      <s:element name="selectAllPassportResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectAllPassportResult" type="tns:ArrayOfPassport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectPassportById">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="PassportNum" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectPassportByIdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectPassportByIdResult" type="tns:Passport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="PassportQuery">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="PassportQueryResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="PassportQueryResult" type="tns:ArrayOfPassport" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="insertNatID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:NatID" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="insertNatIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="insertNatIDResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updateNatID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:NatID" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updateNatIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="updateNatIDResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deleteNatID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:NatID" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deleteNatIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="deleteNatIDResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectAllNatID">
+      <s:element name="updateIdentfiersDbResponse">
         <s:complexType />
-      </s:element>
-      <s:element name="selectAllNatIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectAllNatIDResult" type="tns:ArrayOfNatID" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectNatIDById">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="NatIDNum" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectNatIDByIdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectNatIDByIdResult" type="tns:NatID" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NatIDQuery">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="NatIDQueryResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NatIDQueryResult" type="tns:ArrayOfNatID" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="insertDataPull">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:DataPull" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="insertDataPullResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="insertDataPullResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updateDataPull">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:DataPull" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updateDataPullResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="updateDataPullResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deleteDataPull">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:DataPull" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deleteDataPullResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="deleteDataPullResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectAllDataPull">
-        <s:complexType />
-      </s:element>
-      <s:element name="selectAllDataPullResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectAllDataPullResult" type="tns:ArrayOfDataPull" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectDataPullById">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="DataID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectDataPullByIdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectDataPullByIdResult" type="tns:DataPull" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="DataPullQuery">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="DataPullQueryResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="DataPullQueryResult" type="tns:ArrayOfDataPull" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="insertTrn">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Trn" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="insertTrnResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="insertTrnResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updateTrn">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Trn" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="updateTrnResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="updateTrnResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deleteTrn">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Trn" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="deleteTrnResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="deleteTrnResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectAllTrn">
-        <s:complexType />
-      </s:element>
-      <s:element name="selectAllTrnResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectAllTrnResult" type="tns:ArrayOfTrn" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectTrnById">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="TrnNum" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="selectTrnByIdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="selectTrnByIdResult" type="tns:Trn" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TrnQuery">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TrnQueryResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="TrnQueryResult" type="tns:ArrayOfTrn" />
-          </s:sequence>
-        </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>
@@ -547,149 +204,11 @@
   <wsdl:message name="PersonQuerySoapOut">
     <wsdl:part name="parameters" element="tns:PersonQueryResponse" />
   </wsdl:message>
-  <wsdl:message name="insertPassportSoapIn">
-    <wsdl:part name="parameters" element="tns:insertPassport" />
+  <wsdl:message name="updateIdentfiersDbSoapIn">
+    <wsdl:part name="parameters" element="tns:updateIdentfiersDb" />
   </wsdl:message>
-  <wsdl:message name="insertPassportSoapOut">
-    <wsdl:part name="parameters" element="tns:insertPassportResponse" />
-  </wsdl:message>
-  <wsdl:message name="updatePassportSoapIn">
-    <wsdl:part name="parameters" element="tns:updatePassport" />
-  </wsdl:message>
-  <wsdl:message name="updatePassportSoapOut">
-    <wsdl:part name="parameters" element="tns:updatePassportResponse" />
-  </wsdl:message>
-  <wsdl:message name="deletePassportSoapIn">
-    <wsdl:part name="parameters" element="tns:deletePassport" />
-  </wsdl:message>
-  <wsdl:message name="deletePassportSoapOut">
-    <wsdl:part name="parameters" element="tns:deletePassportResponse" />
-  </wsdl:message>
-  <wsdl:message name="selectAllPassportSoapIn">
-    <wsdl:part name="parameters" element="tns:selectAllPassport" />
-  </wsdl:message>
-  <wsdl:message name="selectAllPassportSoapOut">
-    <wsdl:part name="parameters" element="tns:selectAllPassportResponse" />
-  </wsdl:message>
-  <wsdl:message name="selectPassportByIdSoapIn">
-    <wsdl:part name="parameters" element="tns:selectPassportById" />
-  </wsdl:message>
-  <wsdl:message name="selectPassportByIdSoapOut">
-    <wsdl:part name="parameters" element="tns:selectPassportByIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="PassportQuerySoapIn">
-    <wsdl:part name="parameters" element="tns:PassportQuery" />
-  </wsdl:message>
-  <wsdl:message name="PassportQuerySoapOut">
-    <wsdl:part name="parameters" element="tns:PassportQueryResponse" />
-  </wsdl:message>
-  <wsdl:message name="insertNatIDSoapIn">
-    <wsdl:part name="parameters" element="tns:insertNatID" />
-  </wsdl:message>
-  <wsdl:message name="insertNatIDSoapOut">
-    <wsdl:part name="parameters" element="tns:insertNatIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="updateNatIDSoapIn">
-    <wsdl:part name="parameters" element="tns:updateNatID" />
-  </wsdl:message>
-  <wsdl:message name="updateNatIDSoapOut">
-    <wsdl:part name="parameters" element="tns:updateNatIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="deleteNatIDSoapIn">
-    <wsdl:part name="parameters" element="tns:deleteNatID" />
-  </wsdl:message>
-  <wsdl:message name="deleteNatIDSoapOut">
-    <wsdl:part name="parameters" element="tns:deleteNatIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="selectAllNatIDSoapIn">
-    <wsdl:part name="parameters" element="tns:selectAllNatID" />
-  </wsdl:message>
-  <wsdl:message name="selectAllNatIDSoapOut">
-    <wsdl:part name="parameters" element="tns:selectAllNatIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="selectNatIDByIdSoapIn">
-    <wsdl:part name="parameters" element="tns:selectNatIDById" />
-  </wsdl:message>
-  <wsdl:message name="selectNatIDByIdSoapOut">
-    <wsdl:part name="parameters" element="tns:selectNatIDByIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="NatIDQuerySoapIn">
-    <wsdl:part name="parameters" element="tns:NatIDQuery" />
-  </wsdl:message>
-  <wsdl:message name="NatIDQuerySoapOut">
-    <wsdl:part name="parameters" element="tns:NatIDQueryResponse" />
-  </wsdl:message>
-  <wsdl:message name="insertDataPullSoapIn">
-    <wsdl:part name="parameters" element="tns:insertDataPull" />
-  </wsdl:message>
-  <wsdl:message name="insertDataPullSoapOut">
-    <wsdl:part name="parameters" element="tns:insertDataPullResponse" />
-  </wsdl:message>
-  <wsdl:message name="updateDataPullSoapIn">
-    <wsdl:part name="parameters" element="tns:updateDataPull" />
-  </wsdl:message>
-  <wsdl:message name="updateDataPullSoapOut">
-    <wsdl:part name="parameters" element="tns:updateDataPullResponse" />
-  </wsdl:message>
-  <wsdl:message name="deleteDataPullSoapIn">
-    <wsdl:part name="parameters" element="tns:deleteDataPull" />
-  </wsdl:message>
-  <wsdl:message name="deleteDataPullSoapOut">
-    <wsdl:part name="parameters" element="tns:deleteDataPullResponse" />
-  </wsdl:message>
-  <wsdl:message name="selectAllDataPullSoapIn">
-    <wsdl:part name="parameters" element="tns:selectAllDataPull" />
-  </wsdl:message>
-  <wsdl:message name="selectAllDataPullSoapOut">
-    <wsdl:part name="parameters" element="tns:selectAllDataPullResponse" />
-  </wsdl:message>
-  <wsdl:message name="selectDataPullByIdSoapIn">
-    <wsdl:part name="parameters" element="tns:selectDataPullById" />
-  </wsdl:message>
-  <wsdl:message name="selectDataPullByIdSoapOut">
-    <wsdl:part name="parameters" element="tns:selectDataPullByIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="DataPullQuerySoapIn">
-    <wsdl:part name="parameters" element="tns:DataPullQuery" />
-  </wsdl:message>
-  <wsdl:message name="DataPullQuerySoapOut">
-    <wsdl:part name="parameters" element="tns:DataPullQueryResponse" />
-  </wsdl:message>
-  <wsdl:message name="insertTrnSoapIn">
-    <wsdl:part name="parameters" element="tns:insertTrn" />
-  </wsdl:message>
-  <wsdl:message name="insertTrnSoapOut">
-    <wsdl:part name="parameters" element="tns:insertTrnResponse" />
-  </wsdl:message>
-  <wsdl:message name="updateTrnSoapIn">
-    <wsdl:part name="parameters" element="tns:updateTrn" />
-  </wsdl:message>
-  <wsdl:message name="updateTrnSoapOut">
-    <wsdl:part name="parameters" element="tns:updateTrnResponse" />
-  </wsdl:message>
-  <wsdl:message name="deleteTrnSoapIn">
-    <wsdl:part name="parameters" element="tns:deleteTrn" />
-  </wsdl:message>
-  <wsdl:message name="deleteTrnSoapOut">
-    <wsdl:part name="parameters" element="tns:deleteTrnResponse" />
-  </wsdl:message>
-  <wsdl:message name="selectAllTrnSoapIn">
-    <wsdl:part name="parameters" element="tns:selectAllTrn" />
-  </wsdl:message>
-  <wsdl:message name="selectAllTrnSoapOut">
-    <wsdl:part name="parameters" element="tns:selectAllTrnResponse" />
-  </wsdl:message>
-  <wsdl:message name="selectTrnByIdSoapIn">
-    <wsdl:part name="parameters" element="tns:selectTrnById" />
-  </wsdl:message>
-  <wsdl:message name="selectTrnByIdSoapOut">
-    <wsdl:part name="parameters" element="tns:selectTrnByIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="TrnQuerySoapIn">
-    <wsdl:part name="parameters" element="tns:TrnQuery" />
-  </wsdl:message>
-  <wsdl:message name="TrnQuerySoapOut">
-    <wsdl:part name="parameters" element="tns:TrnQueryResponse" />
+  <wsdl:message name="updateIdentfiersDbSoapOut">
+    <wsdl:part name="parameters" element="tns:updateIdentfiersDbResponse" />
   </wsdl:message>
   <wsdl:portType name="ServiceSoap">
     <wsdl:operation name="insertPerson">
@@ -716,101 +235,9 @@
       <wsdl:input message="tns:PersonQuerySoapIn" />
       <wsdl:output message="tns:PersonQuerySoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="insertPassport">
-      <wsdl:input message="tns:insertPassportSoapIn" />
-      <wsdl:output message="tns:insertPassportSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="updatePassport">
-      <wsdl:input message="tns:updatePassportSoapIn" />
-      <wsdl:output message="tns:updatePassportSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="deletePassport">
-      <wsdl:input message="tns:deletePassportSoapIn" />
-      <wsdl:output message="tns:deletePassportSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="selectAllPassport">
-      <wsdl:input message="tns:selectAllPassportSoapIn" />
-      <wsdl:output message="tns:selectAllPassportSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="selectPassportById">
-      <wsdl:input message="tns:selectPassportByIdSoapIn" />
-      <wsdl:output message="tns:selectPassportByIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="PassportQuery">
-      <wsdl:input message="tns:PassportQuerySoapIn" />
-      <wsdl:output message="tns:PassportQuerySoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="insertNatID">
-      <wsdl:input message="tns:insertNatIDSoapIn" />
-      <wsdl:output message="tns:insertNatIDSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="updateNatID">
-      <wsdl:input message="tns:updateNatIDSoapIn" />
-      <wsdl:output message="tns:updateNatIDSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="deleteNatID">
-      <wsdl:input message="tns:deleteNatIDSoapIn" />
-      <wsdl:output message="tns:deleteNatIDSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="selectAllNatID">
-      <wsdl:input message="tns:selectAllNatIDSoapIn" />
-      <wsdl:output message="tns:selectAllNatIDSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="selectNatIDById">
-      <wsdl:input message="tns:selectNatIDByIdSoapIn" />
-      <wsdl:output message="tns:selectNatIDByIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="NatIDQuery">
-      <wsdl:input message="tns:NatIDQuerySoapIn" />
-      <wsdl:output message="tns:NatIDQuerySoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="insertDataPull">
-      <wsdl:input message="tns:insertDataPullSoapIn" />
-      <wsdl:output message="tns:insertDataPullSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="updateDataPull">
-      <wsdl:input message="tns:updateDataPullSoapIn" />
-      <wsdl:output message="tns:updateDataPullSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="deleteDataPull">
-      <wsdl:input message="tns:deleteDataPullSoapIn" />
-      <wsdl:output message="tns:deleteDataPullSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="selectAllDataPull">
-      <wsdl:input message="tns:selectAllDataPullSoapIn" />
-      <wsdl:output message="tns:selectAllDataPullSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="selectDataPullById">
-      <wsdl:input message="tns:selectDataPullByIdSoapIn" />
-      <wsdl:output message="tns:selectDataPullByIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="DataPullQuery">
-      <wsdl:input message="tns:DataPullQuerySoapIn" />
-      <wsdl:output message="tns:DataPullQuerySoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="insertTrn">
-      <wsdl:input message="tns:insertTrnSoapIn" />
-      <wsdl:output message="tns:insertTrnSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="updateTrn">
-      <wsdl:input message="tns:updateTrnSoapIn" />
-      <wsdl:output message="tns:updateTrnSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="deleteTrn">
-      <wsdl:input message="tns:deleteTrnSoapIn" />
-      <wsdl:output message="tns:deleteTrnSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="selectAllTrn">
-      <wsdl:input message="tns:selectAllTrnSoapIn" />
-      <wsdl:output message="tns:selectAllTrnSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="selectTrnById">
-      <wsdl:input message="tns:selectTrnByIdSoapIn" />
-      <wsdl:output message="tns:selectTrnByIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="TrnQuery">
-      <wsdl:input message="tns:TrnQuerySoapIn" />
-      <wsdl:output message="tns:TrnQuerySoapOut" />
+    <wsdl:operation name="updateIdentfiersDb">
+      <wsdl:input message="tns:updateIdentfiersDbSoapIn" />
+      <wsdl:output message="tns:updateIdentfiersDbSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -869,215 +296,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="insertPassport">
-      <soap:operation soapAction="http://tempuri.org/insertPassport" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updatePassport">
-      <soap:operation soapAction="http://tempuri.org/updatePassport" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deletePassport">
-      <soap:operation soapAction="http://tempuri.org/deletePassport" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectAllPassport">
-      <soap:operation soapAction="http://tempuri.org/selectAllPassport" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectPassportById">
-      <soap:operation soapAction="http://tempuri.org/selectPassportById" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PassportQuery">
-      <soap:operation soapAction="http://tempuri.org/PassportQuery" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="insertNatID">
-      <soap:operation soapAction="http://tempuri.org/insertNatID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateNatID">
-      <soap:operation soapAction="http://tempuri.org/updateNatID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteNatID">
-      <soap:operation soapAction="http://tempuri.org/deleteNatID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectAllNatID">
-      <soap:operation soapAction="http://tempuri.org/selectAllNatID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectNatIDById">
-      <soap:operation soapAction="http://tempuri.org/selectNatIDById" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NatIDQuery">
-      <soap:operation soapAction="http://tempuri.org/NatIDQuery" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="insertDataPull">
-      <soap:operation soapAction="http://tempuri.org/insertDataPull" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateDataPull">
-      <soap:operation soapAction="http://tempuri.org/updateDataPull" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteDataPull">
-      <soap:operation soapAction="http://tempuri.org/deleteDataPull" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectAllDataPull">
-      <soap:operation soapAction="http://tempuri.org/selectAllDataPull" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectDataPullById">
-      <soap:operation soapAction="http://tempuri.org/selectDataPullById" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DataPullQuery">
-      <soap:operation soapAction="http://tempuri.org/DataPullQuery" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="insertTrn">
-      <soap:operation soapAction="http://tempuri.org/insertTrn" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateTrn">
-      <soap:operation soapAction="http://tempuri.org/updateTrn" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteTrn">
-      <soap:operation soapAction="http://tempuri.org/deleteTrn" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectAllTrn">
-      <soap:operation soapAction="http://tempuri.org/selectAllTrn" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectTrnById">
-      <soap:operation soapAction="http://tempuri.org/selectTrnById" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TrnQuery">
-      <soap:operation soapAction="http://tempuri.org/TrnQuery" style="document" />
+    <wsdl:operation name="updateIdentfiersDb">
+      <soap:operation soapAction="http://tempuri.org/updateIdentfiersDb" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1142,215 +362,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="insertPassport">
-      <soap12:operation soapAction="http://tempuri.org/insertPassport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updatePassport">
-      <soap12:operation soapAction="http://tempuri.org/updatePassport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deletePassport">
-      <soap12:operation soapAction="http://tempuri.org/deletePassport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectAllPassport">
-      <soap12:operation soapAction="http://tempuri.org/selectAllPassport" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectPassportById">
-      <soap12:operation soapAction="http://tempuri.org/selectPassportById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PassportQuery">
-      <soap12:operation soapAction="http://tempuri.org/PassportQuery" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="insertNatID">
-      <soap12:operation soapAction="http://tempuri.org/insertNatID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateNatID">
-      <soap12:operation soapAction="http://tempuri.org/updateNatID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteNatID">
-      <soap12:operation soapAction="http://tempuri.org/deleteNatID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectAllNatID">
-      <soap12:operation soapAction="http://tempuri.org/selectAllNatID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectNatIDById">
-      <soap12:operation soapAction="http://tempuri.org/selectNatIDById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NatIDQuery">
-      <soap12:operation soapAction="http://tempuri.org/NatIDQuery" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="insertDataPull">
-      <soap12:operation soapAction="http://tempuri.org/insertDataPull" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateDataPull">
-      <soap12:operation soapAction="http://tempuri.org/updateDataPull" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteDataPull">
-      <soap12:operation soapAction="http://tempuri.org/deleteDataPull" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectAllDataPull">
-      <soap12:operation soapAction="http://tempuri.org/selectAllDataPull" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectDataPullById">
-      <soap12:operation soapAction="http://tempuri.org/selectDataPullById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DataPullQuery">
-      <soap12:operation soapAction="http://tempuri.org/DataPullQuery" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="insertTrn">
-      <soap12:operation soapAction="http://tempuri.org/insertTrn" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="updateTrn">
-      <soap12:operation soapAction="http://tempuri.org/updateTrn" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="deleteTrn">
-      <soap12:operation soapAction="http://tempuri.org/deleteTrn" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectAllTrn">
-      <soap12:operation soapAction="http://tempuri.org/selectAllTrn" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="selectTrnById">
-      <soap12:operation soapAction="http://tempuri.org/selectTrnById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TrnQuery">
-      <soap12:operation soapAction="http://tempuri.org/TrnQuery" style="document" />
+    <wsdl:operation name="updateIdentfiersDb">
+      <soap12:operation soapAction="http://tempuri.org/updateIdentfiersDb" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
