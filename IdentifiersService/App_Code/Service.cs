@@ -69,7 +69,11 @@ public class Service : System.Web.Services.WebService
     }
 
     #region Person
-
+    //[WebMethod]
+    //public void test()
+    //{
+    //    string val = verify(new Person() { TRN = "11111", NAtionID = "123", Passport = "1234", Fname = "Kareem", Lname = "Scott", MiddleName = "S", MotherMaiden = "Craig" });
+    //}
     [WebMethod]
     public string verify(Person obj)
     {
@@ -77,88 +81,89 @@ public class Service : System.Web.Services.WebService
         National.Service nationalSv = new National.Service();
         passport.Service passportSv = new passport.Service();
         IDENTIFIERSDataContext db = new IDENTIFIERSDataContext();
-        if (obj.TRN == string.Empty && obj.NAtionID == string.Empty && obj.Passport == string.Empty)
+        if (string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))
         {
             return "You must enter at least one of the following (TRN, Passport # or, National ID)";
         }
         else
         {
-            if (obj.TRN != string.Empty && obj.NAtionID != string.Empty && obj.Passport != string.Empty)
+            if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))
             {
                 if (trnCheck(obj) && nisCheck(obj) && PassportCheck(obj))
                 {
-                    return "The credentials did not match up correctly";
+
+                    return "verification successful";
                 }
                 else
                 {
-                    return "verification successful";
+                    return "The credentials did not match up correctly";
                 }
             }
             else
-                if (obj.TRN != string.Empty && obj.NAtionID != string.Empty)
+                if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID))
                 {
                     if (trnCheck(obj) && nisCheck(obj))
                     {
-                        return "The credentials did not match up correctly";
+                        return "verification successful";
                     }
                     else
                     {
-                        return "verification successful";
+                        return "The credentials did not match up correctly";
                     }
                 }
-                else if (obj.TRN != string.Empty && obj.Passport != string.Empty)
+                else if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.Passport))
                 {
                     if (trnCheck(obj) && PassportCheck(obj))
                     {
-                        return "The credentials did not match up correctly";
+                        return "verification successful";
                     }
                     else
                     {
-                        return "verification successful";
+                        return "The credentials did not match up correctly";
                     }
                 }
-                else if (obj.NAtionID != string.Empty && obj.Passport != string.Empty)
+                else if (!string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))
                 {
                     if (nisCheck(obj) && PassportCheck(obj))
                     {
-                        return "The credentials did not match up correctly";
+                        return "verification successful";
                     }
                     else
                     {
-                        return "verification successful";
+                        return "The credentials did not match up correctly";
                     }
                 }
-                else if (obj.TRN != string.Empty && obj.NAtionID == string.Empty && obj.Passport == string.Empty)
+                else if (!string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))
                 {
                     if (trnCheck(obj))
                     {
-                        return "The credentials did not match up correctly";
+                        return "verification successful";
                     }
                     else
                     {
-                        return "verification successful";
+                        return "The credentials did not match up correctly";
                     }
                 }
-                else if (obj.TRN == string.Empty && obj.NAtionID != string.Empty && obj.Passport == string.Empty)
+                else if (string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))
                 {
                     if (nisCheck(obj))
                     {
-                        return "The credentials did not match up correctly";
+                        return "verification successful";
                     }
                     else
                     {
-                        return "verification successful";
+                        return "The credentials did not match up correctly";
                     }
                 }
-                else if (obj.TRN == string.Empty && obj.NAtionID == string.Empty && obj.Passport != string.Empty)
+                else if (string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))
                 {
                     if (PassportCheck(obj))
                     {
-                        return "The credentials did not match up correctly";
+                        return "verification successful";
                     }
                     else
                     {
-                        return "verification successful";
+                        return "The credentials did not match up correctly";
                     }
                 }
         }
@@ -183,8 +188,10 @@ public class Service : System.Web.Services.WebService
                      trn.Fname == obj.Fname && obj.Lname == trn.Lname &&
                      (obj.MiddleName == trn.MiddleName || trn.MotherMaiden == obj.MotherMaiden)
                  select trn).SingleOrDefault();
+            
             if (t == null)
             {
+
                 //send text message asking informing the person that some one is trying to make a transaction using their credentials and they should verify with the following institution
                 return false;//"The credentials could not be verified.";
             }
@@ -208,7 +215,7 @@ public class Service : System.Web.Services.WebService
         National.NatID n = null;
 
         Person person = (from p in db.Persons
-                         where p.TRN == obj.TRN && p.Fname == obj.Fname && obj.Lname == p.Lname &&
+                         where p.NAtionID == obj.NAtionID && p.Fname == obj.Fname && obj.Lname == p.Lname &&
                     (obj.MiddleName == p.MiddleName || p.MotherMaiden == obj.MotherMaiden)
                          select p).SingleOrDefault();
 
@@ -244,14 +251,14 @@ public class Service : System.Web.Services.WebService
         passport.Passport pas = null;
 
         Person person = (from p in db.Persons
-                         where p.TRN == obj.TRN && p.Fname == obj.Fname && obj.Lname == p.Lname &&
+                         where p.Passport == obj.Passport && p.Fname == obj.Fname && obj.Lname == p.Lname &&
                     (obj.MiddleName == p.MiddleName || p.MotherMaiden == obj.MotherMaiden)
                          select p).SingleOrDefault();
 
         if (person == null)
         {
             pas = (from pass in passportSv.selectAllPassport()
-                   where pass.PassportNum.ToString() == obj.TRN &&
+                   where pass.PassportNum.ToString() == obj.Passport &&
                        pass.Fname == obj.Fname && obj.Lname == pass.Lname &&
                        (obj.MiddleName == pass.MiddleName || pass.MotherMaiden == obj.MotherMaiden)
                    select pass).SingleOrDefault();
