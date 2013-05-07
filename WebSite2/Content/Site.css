@@ -10,8 +10,9 @@ body {
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
-    margin: 0;
+    margin: auto;
     padding: 0;
+    width:960px;
 }
 
 a {
@@ -502,7 +503,7 @@ input[type="checkbox"].input-validation-error {
 
 /* tables
 ----------------------------------------------------------*/
-table {
+/*table {
     border-collapse: collapse;
     border-spacing: 0;
     margin-top: 0.75em;
@@ -523,14 +524,14 @@ th {
     }
 
 	th a:link, th a:visited, th a:active, th a:hover {
-		color: #333;
+		color: #fff;
 		font-weight: 600;
 		text-decoration: none;
         padding: 0;
 	}
 
 	th a:hover {
-		color: #000;
+		color: #fff;
 	}
 
     th.asc a, th.desc a {
@@ -560,7 +561,7 @@ td {
 
 tr.pager td {
     padding: 0 0.25em 0 0;
-}
+}*/
 
 
 /********************
@@ -732,3 +733,88 @@ tr.pager td {
         }
 }
 /* END: Mobile Styles */
+
+
+        /*--------GRIDVIEW STYLES-----------*/
+
+        .mGrid td {
+            padding: 2px;
+            border: solid 1px #c1c1c1;
+            color: #717171;
+        }
+
+        .mGrid th {
+            padding: 4px 2px;
+            color: #fff;
+            background: #424242 url(grd_head.png) repeat-x top;
+            border-left: solid 1px #525252;
+            font-size: 0.9em;
+        }
+
+        .mGrid .alt {
+            background: #fcfcfc url(grd_alt.png) repeat-x top;
+        }
+
+        .mGrid .pgr {
+            background: #424242 url(grd_pgr.png) repeat-x top;
+        }
+
+            .mGrid .pgr table {
+                margin: 5px 0;
+            }
+
+            .mGrid .pgr td {
+                border-width: 0;
+                padding: 0 6px;
+                border-left: solid 1px #666;
+                font-weight: bold;
+                color: #fff;
+                line-height: 12px;
+            }
+
+            .mGrid .pgr a {
+                color: #666;
+                text-decoration: none;
+            }
+
+                .mGrid .pgr a:hover {
+                    color: #000;
+                    text-decoration: none;
+                }
+
+        .DataWebControlStyle {
+            font-size: 90%;
+        }
+
+        .AlternatingRowStyle {
+            background-color: #f7f6f3;
+        }
+
+        .RowStyle {
+        }
+
+        .HeaderStyle {
+            background-color: #5d7b9d;
+            color: White;
+            font-weight: bold;
+        }
+
+        .SelectedRowStyle {
+            background-color: #5d7b9d;
+        }
+
+        .FooterStyle {
+            background-color: #f7f6f3;
+            color: White;
+            text-align: right;
+        }
+
+        .PagerRowStyle {
+            background-color: #5d7b9d;
+            text-align: right;
+        }
+
+.margin {
+    margin: 0 auto;
+}
+
