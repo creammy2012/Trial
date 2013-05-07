@@ -21,7 +21,7 @@ using System.Reflection;
 
 
 
-[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="NCBMPG")]
+[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="NCB")]
 public partial class NCBDataContext : System.Data.Linq.DataContext
 {
 	
@@ -35,7 +35,7 @@ public partial class NCBDataContext : System.Data.Linq.DataContext
   #endregion
 	
 	public NCBDataContext() : 
-			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["NCBMPGConnectionString"].ConnectionString, mappingSource)
+			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["NCBConnectionString"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}
