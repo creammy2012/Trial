@@ -69,11 +69,9 @@ public class Service : System.Web.Services.WebService
     }
 
     #region Person
-    //[WebMethod]
-    //public void test()
-    //{
-    //    string val = verify(new Person() { TRN = "11111", NAtionID = "123", Passport = "1234", Fname = "Kareem", Lname = "Scott", MiddleName = "S", MotherMaiden = "Craig" });
-    //}
+ 
+
+    //Web method to verify a person's identity. If the given credentials match then the verification method reutrns true, If not,it returns false,
     [WebMethod]
     public string verify(Person obj)
     {
@@ -81,13 +79,13 @@ public class Service : System.Web.Services.WebService
         National.Service nationalSv = new National.Service();
         passport.Service passportSv = new passport.Service();
         IDENTIFIERSDataContext db = new IDENTIFIERSDataContext();
-        if (string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))
+        if (string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))//checks if all fields are empty
         {
             return "You must enter at least one of the following (TRN, Passport # or, National ID)";
         }
         else
         {
-            if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))
+            if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))//checks if at least one field has information
             {
                 if (trnCheck(obj) && nisCheck(obj) && PassportCheck(obj))
                 {
@@ -100,7 +98,7 @@ public class Service : System.Web.Services.WebService
                 }
             }
             else
-                if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID))
+                if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID))//checks the given information
                 {
                     if (trnCheck(obj) && nisCheck(obj))
                     {
@@ -111,7 +109,7 @@ public class Service : System.Web.Services.WebService
                         return "The credentials did not match up correctly";
                     }
                 }
-                else if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.Passport))
+                else if (!string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.Passport))//checks the given information
                 {
                     if (trnCheck(obj) && PassportCheck(obj))
                     {
@@ -122,7 +120,7 @@ public class Service : System.Web.Services.WebService
                         return "The credentials did not match up correctly";
                     }
                 }
-                else if (!string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))
+                else if (!string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))//checks the given information
                 {
                     if (nisCheck(obj) && PassportCheck(obj))
                     {
@@ -133,7 +131,7 @@ public class Service : System.Web.Services.WebService
                         return "The credentials did not match up correctly";
                     }
                 }
-                else if (!string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))
+                else if (!string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))//checks the given information
                 {
                     if (trnCheck(obj))
                     {
@@ -144,7 +142,7 @@ public class Service : System.Web.Services.WebService
                         return "The credentials did not match up correctly";
                     }
                 }
-                else if (string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))
+                else if (string.IsNullOrEmpty(obj.TRN) && !string.IsNullOrEmpty(obj.NAtionID) && string.IsNullOrEmpty(obj.Passport))//checks the given information
                 {
                     if (nisCheck(obj))
                     {
@@ -155,7 +153,7 @@ public class Service : System.Web.Services.WebService
                         return "The credentials did not match up correctly";
                     }
                 }
-                else if (string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))
+                else if (string.IsNullOrEmpty(obj.TRN) && string.IsNullOrEmpty(obj.NAtionID) && !string.IsNullOrEmpty(obj.Passport))//checks the given information
                 {
                     if (PassportCheck(obj))
                     {
@@ -170,6 +168,8 @@ public class Service : System.Web.Services.WebService
         return "verification failed";
     }
 
+    //If the trn provided was true then a text message is sent out to the person stating that the transaction made is successful
+    //If the trn provided was false then a text message will be sent out that a transaction was attempted using various personal information along with the location, time and date etc
     protected bool trnCheck(Person obj)
     {
         TRN.Service trnSv = new TRN.Service();
@@ -208,6 +208,8 @@ public class Service : System.Web.Services.WebService
         }
     }
 
+    //If the National ID provided was true then a text message is sent out to the person stating that the transaction made is successful
+    //If the National ID provided was false then a text message will be sent out that a transaction was attempted using various personal information along with the location, time and date etc
     protected bool nisCheck(Person obj)
     {
         National.Service natSv = new National.Service();
@@ -244,6 +246,8 @@ public class Service : System.Web.Services.WebService
         }
     }
 
+    //If the Passport Number provided was true then a text message is sent out to the person stating that the transaction made is successful
+    //If the Passport Number was false then a text message will be sent out that a transaction was attempted using various personal information along with the location, time and date etc
     protected bool PassportCheck(Person obj)
     {
         passport.Service passportSv = new passport.Service();
@@ -280,25 +284,27 @@ public class Service : System.Web.Services.WebService
         }
     }
 
-    [WebMethod]
-    public string insertPerson(Person obj)
-    {
-        IDENTIFIERSDataContext db = new IDENTIFIERSDataContext();
-        if (obj.TRN == string.Empty && obj.NAtionID == string.Empty && obj.Passport == string.Empty)
-        {
-            return "You must enter at least one of the following (TRN, Passport # or, National ID)";
-        }
-        else
-        {
-            db.Persons.InsertOnSubmit(obj);
-            if (Submit(db))
-            {
-                return "Person saved successfully";
-            }
-        }
-        return "Error saving person";
-    }
 
+    //[WebMethod]
+    //public string insertPerson(Person obj)
+    //{
+    //    IDENTIFIERSDataContext db = new IDENTIFIERSDataContext();
+    //    if (obj.TRN == string.Empty && obj.NAtionID == string.Empty && obj.Passport == string.Empty)
+    //    {
+    //        return "You must enter at least one of the following (TRN, Passport # or, National ID)";
+    //    }
+    //    else
+    //    {
+    //        db.Persons.InsertOnSubmit(obj);
+    //        if (Submit(db))
+    //        {
+    //            return "Person saved successfully";
+    //        }
+    //    }
+    //    return "Error saving person";
+    //}
+
+    //method to update person table
     [WebMethod]
     public bool updatePerson(Person obj)
     {
@@ -339,17 +345,20 @@ public class Service : System.Web.Services.WebService
         }
     }
 
-    [WebMethod]
-    public bool deletePerson(Person obj)
-    {
-        IDENTIFIERSDataContext db = new IDENTIFIERSDataContext();
-        var del = (from ob in db.Persons
-                   where ob.CustID == obj.CustID
-                   select ob).Single();
-        db.Persons.DeleteOnSubmit(del);
-        return Submit(db);
-    }
+    //[WebMethod]
+    //public bool deletePerson(Person obj)
+    //{
+    //    IDENTIFIERSDataContext db = new IDENTIFIERSDataContext();
+    //    var del = (from ob in db.Persons
+    //               where ob.CustID == obj.CustID
+    //               select ob).Single();
+    //    db.Persons.DeleteOnSubmit(del);
+    //    return Submit(db);
+    //}
 
+    //Web method to select all persons from the database
+
+    //METHOD to select all persons
     [WebMethod]
     public List<SelectAllPersonResult> selectAllPerson()
     {
@@ -363,6 +372,7 @@ public class Service : System.Web.Services.WebService
         //return obj;
     }
 
+    //method to select all persons by ID
     [WebMethod]
     public SelectAllPersonByIdResult selectPersonById(int CustID)
     {
@@ -376,6 +386,7 @@ public class Service : System.Web.Services.WebService
         //return obj;
     }
 
+    //returns person
     [WebMethod]
     public List<PersonQueryResult> PersonQuery(string query)
     {
@@ -389,6 +400,7 @@ public class Service : System.Web.Services.WebService
         //return obj;
     }
 
+    //Method to update the Identifier Database with the most recent information from the external databases
     [WebMethod]
     public void updateIdentfiersDb()
     {
